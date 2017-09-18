@@ -3,3 +3,7 @@ AllCops:
 
 inherit_gem:
   ruboconfig: rubocop.yml
+
+Style/MutableConstant:
+  Exclude:
+    - app/constants/api.rb

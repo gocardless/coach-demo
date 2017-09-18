@@ -11,7 +11,7 @@ module Routes
       requires :user, :model
 
       def call
-        [200, model.to_json, Constants::Api::RESPONSE_HEADERS]
+        [200, Constants::Api::RESPONSE_HEADERS, [model.to_json]]
       end
     end
   end

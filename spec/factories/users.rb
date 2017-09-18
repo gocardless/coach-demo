@@ -6,6 +6,7 @@ FactoryGirl.define do
   factory :user do
     email "tim@gocardless.com"
     access_token { SecureRandom.hex }
+    permissions []
 
     trait :can_manage_attendees do
       permissions ["attendees"]
