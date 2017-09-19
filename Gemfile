@@ -18,6 +18,11 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_girl_rails', '~> 4.8.0'
+  gem 'rspec-rails', '~> 3.6.1'
+  gem 'ruboconfig', git: 'git@github.com:gocardless/ruboconfig'
+  gem 'rubocop', '~> 0.50'
+  gem 'rspec_junit_formatter', '~> 0.3.0'
 end
 
 group :development do
@@ -30,7 +35,3 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'coach', '~> 0.5.1'
-gem 'factory_girl_rails', '~> 4.8.0'
-gem 'rspec-rails', '~> 3.6.1'
-gem 'ruboconfig', git: 'git@github.com:gocardless/ruboconfig'
-gem 'rubocop', '~> 0.50'
