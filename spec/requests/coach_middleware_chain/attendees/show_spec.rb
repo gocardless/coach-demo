@@ -3,7 +3,7 @@
 
 require "rails_helper"
 
-RSpec.describe "GET /attendees/:id", type: :request do
+RSpec.describe "GET /coach_middleware_chain/attendees/:id", type: :request do
   let(:attendee) { FactoryGirl.create(:attendee) }
   let(:user) { FactoryGirl.create(:user, :can_manage_attendees) }
 
@@ -15,7 +15,7 @@ RSpec.describe "GET /attendees/:id", type: :request do
   end
 
   it "returns a JSON representation of the attendee" do
-    get "/attendees/#{attendee.id}",
+    get "/coach_middleware_chain/attendees/#{attendee.id}",
         headers: headers
 
     expect(response.status).to eq(200)
@@ -24,7 +24,7 @@ RSpec.describe "GET /attendees/:id", type: :request do
 
   context "requesting a non-existent ID" do
     it "returns an error" do
-      get "/attendees/123",
+      get "/coach_middleware_chain/attendees/123",
           headers: headers
 
       expect(response.status).to eq(404)
@@ -37,7 +37,7 @@ RSpec.describe "GET /attendees/:id", type: :request do
       let(:user) { FactoryGirl.create(:user) }
 
       it "returns an error" do
-        get "/attendees/#{attendee.id}",
+        get "/coach_middleware_chain/attendees/#{attendee.id}",
             headers: headers
 
         expect(response.status).to eq(403)
@@ -49,7 +49,7 @@ RSpec.describe "GET /attendees/:id", type: :request do
       before { headers.delete("Authorization") }
 
       it "returns an error" do
-        get "/attendees/#{attendee.id}",
+        get "/coach_middleware_chain/attendees/#{attendee.id}",
             headers: headers
 
         expect(response.status).to eq(401)
@@ -61,7 +61,7 @@ RSpec.describe "GET /attendees/:id", type: :request do
       before { headers["Authorization"] = "Bearer lolwut" }
 
       it "returns an error" do
-        get "/attendees/#{attendee.id}",
+        get "/coach_middleware_chain/attendees/#{attendee.id}",
             headers: headers
 
         expect(response.status).to eq(401)
@@ -72,7 +72,7 @@ RSpec.describe "GET /attendees/:id", type: :request do
         before { headers["Accept-Language"] = "fr" }
 
         it "returns an error in French" do
-          get "/attendees/#{attendee.id}",
+          get "/coach_middleware_chain/attendees/#{attendee.id}",
               headers: headers
 
           expect(response.status).to eq(401)

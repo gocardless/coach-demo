@@ -7,3 +7,11 @@ inherit_gem:
 Style/MutableConstant:
   Exclude:
     - app/constants/api.rb
+
+Metrics/AbcSize:
+  Exclude:
+    - app/routes/single_coach_middleware/attendees/show.rb
+
+Metrics/MethodLength:
+  Exclude:
+    - app/routes/single_coach_middleware/attendees/show.rb
