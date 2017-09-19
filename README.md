@@ -1,4 +1,4 @@
-# Coach Demo
+# Coach Demo [![CircleCI](https://circleci.com/gh/gocardless/coach-demo.svg?style=svg&circle-token=16add89141d16a18ea566104ce62f9585e8f5e09)](https://circleci.com/gh/gocardless/coach-demo)
 
 This repository is a demo project for [Coach](https://github.com/gocardless/coach).
 
