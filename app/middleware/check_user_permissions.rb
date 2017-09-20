@@ -5,7 +5,7 @@ module Middleware
     requires :user
 
     def call
-      unless user.permissions.include?(required_permission.to_s)
+      unless user.permissions.include?(required_permission)
         return invalid_permissions_error
       end
 
@@ -15,7 +15,7 @@ module Middleware
     private
 
     def required_permission
-      config.fetch(:required_permission)
+      config.fetch(:required_permission).to_s
     end
 
     def invalid_permissions_error

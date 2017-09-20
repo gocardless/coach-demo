@@ -27,7 +27,7 @@ RSpec.describe Middleware::Translate do
 
     let(:next_middleware) { -> { expect(I18n.locale).to eq(:en) } }
 
-    it "doesn't the language" do
+    it "uses the default language" do
       instance.call
     end
   end
