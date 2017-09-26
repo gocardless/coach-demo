@@ -34,4 +34,4 @@ end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'coach', '~> 0.5.1'
+gem 'coach', '~> 0.5.2'
