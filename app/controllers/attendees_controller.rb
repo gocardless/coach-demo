@@ -23,11 +23,11 @@ class AttendeesController < ApplicationController
   def check_authorization_header
     header_value = request.headers["HTTP_AUTHORIZATION"]
 
-    unless header_value.present? && header_value.split(" ", 2).first == "Bearer"
-      return missing_access_token_error
-    end
+    return missing_access_token_error unless header_value.present?
+    token_type, token = header_value.split(" ", 2)
+    return missing_access_token_error unless token_type == "Bearer"
 
-    @access_token = header_value.split(" ", 2).last
+    @access_token = token
   end
 
   def check_access_token
